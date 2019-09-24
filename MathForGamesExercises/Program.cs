@@ -214,6 +214,7 @@ namespace MathForGamesExercises
                 // TEST CASE: ENTER 60, 50, 20
                 // THE ANSWERS ARE IN THE CONSOLE.WRITELINES
 
+
                 tmp = Math.Abs(((c * c) - ((a * a) + (b * b))) / -(2 * a * b));
                 //Console.WriteLine($"{Math.Abs((c * c) - ((a * a) + (b * b)))} / {Math.Abs(-(2 * a * b))} SHOULD be 5700 / 6000");
                 //Console.WriteLine($"{tmp} SHOULD be around 0.95");
