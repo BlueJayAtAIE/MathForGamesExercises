@@ -8,7 +8,7 @@ namespace MathForGamesExercises
 {
     class Program
     {
-        public struct Point
+        struct Point
         {
             public float x;
             public float y;
@@ -202,27 +202,32 @@ namespace MathForGamesExercises
                 return deg;
             }
 
-            // TODO
+            // TODO- complete this for the other 2 angles
+            // Use the other provided equation for x, then subtract x and z from 180 for y
             Point TriangleSolver(float a, float b, float c)
             {
-                // Visualize it like this: Triangle with sides a, b, and c, and angles A, B, and C.
-                // The angles and directly Opposite to their side lettered counterparts. Adjacent and Hypotenuse don't matter bc they play the same role.
+                // Visualize it like this: Triangle with sides a, b, and c, and angles X, Y, and Z.
+                // The angles are directly Opposite to the letter that corresponds to them in the angle list (by order) ex: a is Opposite of X. 
+                //Adjacent and Hypotenuse don't matter bc they play the same role.
 
+                // TEST CASE: ENTER 60, 50, 20
                 Point triangleAngles = new Point();
                 float tmp;
 
-                // TEST CASE: ENTER 60, 50, 20
-                // THE ANSWERS ARE IN THE CONSOLE.WRITELINES
+                // Finding X
 
 
+                // Finding Z
                 tmp = Math.Abs(((c * c) - ((a * a) + (b * b))) / -(2 * a * b));
-                //Console.WriteLine($"{Math.Abs((c * c) - ((a * a) + (b * b)))} / {Math.Abs(-(2 * a * b))} SHOULD be 5700 / 6000");
-                //Console.WriteLine($"{tmp} SHOULD be around 0.95");
+                //Console.WriteLine($"TEST CASE: {Math.Abs((c * c) - ((a * a) + (b * b)))} / {Math.Abs(-(2 * a * b))} SHOULD be 5700 / 6000");
+                //Console.WriteLine($"TEST CASE: {tmp} SHOULD be around 0.95");
                 triangleAngles.z = (float)Math.Acos(tmp);
                 triangleAngles.z =  RadToDeg(triangleAngles.z);
-                //Console.WriteLine($"{triangleAngles.z} SHOULD be around 18.2");
+                //Console.WriteLine($"TEST CASE: {triangleAngles.z} SHOULD be around 18.2");
                 // POGCHAMP
                 // also theres a way to make this a lot shorter- having to do with taking the sqrt of the two adjacent sides and... something after that
+
+                // Finding Y
 
                 return triangleAngles;
             }

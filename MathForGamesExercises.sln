@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathForGamesExercises", "MathForGamesExercises\MathForGamesExercises.csproj", "{5A6BDB1D-0E39-4656-983E-CCE50CD90DAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTutorialAndExercises", "BinaryTutorialAndExercises\BinaryTutorialAndExercises.csproj", "{B5C5838F-FD4F-4497-ADCD-BEE5E4907A48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorsTutorialAndExercises", "VectorsTutorialAndExercises\VectorsTutorialAndExercises.csproj", "{75D26033-122E-4E42-8FA2-BE7E7C3EC461}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5A6BDB1D-0E39-4656-983E-CCE50CD90DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A6BDB1D-0E39-4656-983E-CCE50CD90DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A6BDB1D-0E39-4656-983E-CCE50CD90DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C5838F-FD4F-4497-ADCD-BEE5E4907A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C5838F-FD4F-4497-ADCD-BEE5E4907A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C5838F-FD4F-4497-ADCD-BEE5E4907A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C5838F-FD4F-4497-ADCD-BEE5E4907A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D26033-122E-4E42-8FA2-BE7E7C3EC461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D26033-122E-4E42-8FA2-BE7E7C3EC461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D26033-122E-4E42-8FA2-BE7E7C3EC461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D26033-122E-4E42-8FA2-BE7E7C3EC461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
