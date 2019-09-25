@@ -28,11 +28,17 @@ namespace BinaryTutorialAndExercises
         {
             byte inventory = 0;
 
+            // Comment and uncomment these to see how PrintBinary changes.
+            //AddToInventory(ref inventory, CHAINSAW);
             AddToInventory(ref inventory, PISTOL);
-            AddToInventory(ref inventory, PLASMA_GUN);
-            AddToInventory(ref inventory, BFG9000);
+            //AddToInventory(ref inventory, SHOTGUN);
+            AddToInventory(ref inventory, SUPER_SHOTGUN);
+            AddToInventory(ref inventory, CHAINGUN);
+            //AddToInventory(ref inventory, ROCKET_LAUNCHER);
+            //AddToInventory(ref inventory, PLASMA_GUN);
+            //AddToInventory(ref inventory, BFG9000);
 
-            PrintBinary(inventory); //Does not work
+            PrintBinary(inventory);
 
             Console.WriteLine();
             Console.WriteLine(IsLeftMostBitSet(10101100)); //True
@@ -48,7 +54,7 @@ namespace BinaryTutorialAndExercises
 
             Console.WriteLine();
             Console.WriteLine(IsBitSet(11111010, 0)); //False
-            Console.WriteLine(IsBitSet(10000010, 1)); //True
+            Console.WriteLine(IsBitSet(00100010, 1)); //True
             Console.WriteLine(IsBitSet(1101011011, 6)); //True
             Console.WriteLine(IsBitSet(0000000000, 6)); //Self Destruct
 
@@ -83,11 +89,21 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static bool IsLeftMostBitSet(uint value)
         {
-            // Because of how converting to strings work- by dropping the zeros-
-            // it will always return true if theres at least one "1" in the input...
-            // TODO
             string temp = value.ToString();
-            if (temp.First() == '1')
+            string final = temp;
+
+            // This if and while loop will add the 0s back on 
+            // that are lost when converting to a string.
+            if (temp.Length < 8)
+            {
+                while (final.Length < 8)
+                {
+                    final = temp.Insert(0, "0");
+                    temp = final;
+                }
+            }
+
+            if (final.First() == '1')
             {
                 return true;
             }
@@ -129,7 +145,7 @@ namespace BinaryTutorialAndExercises
             }
             catch
             {
-                Console.WriteLine("Error! Returning false...");
+                Console.Write("Error! Returning false... > ");
             }
             
             return false;
@@ -165,7 +181,20 @@ namespace BinaryTutorialAndExercises
         public static void PrintBinary(byte value)
         {
             string temp = Convert.ToString(value, 2);
-            Console.WriteLine(temp); // TODO prints the wrong number
+            string final = temp;
+
+            // This if and while loop will add the 0s back on 
+            // that are lost when converting to a string.
+            if (temp.Length < 8)
+            {
+                while (final.Length < 8)
+                {
+                    final = temp.Insert(0, "0");
+                    temp = final;
+                }
+            }
+
+            Console.WriteLine(temp);
         }
     }
 }
