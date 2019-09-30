@@ -124,16 +124,6 @@ namespace MathForGamesExercises
                         float.TryParse(Console.ReadLine(), out userInputC);
                         TriangleSolver(userInputA, userInputB, userInputC);
                         break;
-                    case 'i':
-                        break;
-                    case 'j':
-                        break;
-                    case 'k':
-                        break;
-                    case 'l':
-                        break;
-                    case 'm':
-                        break;
                     default:
                         Console.WriteLine("Invalid input!");
                         break;
@@ -202,20 +192,20 @@ namespace MathForGamesExercises
                 return deg;
             }
 
-            // TODO- complete this for the other 2 angles
-            // Use the other provided equation for x, then subtract x and z from 180 for y
             Point TriangleSolver(float a, float b, float c)
             {
                 // Visualize it like this: Triangle with sides a, b, and c, and angles X, Y, and Z.
                 // The angles are directly Opposite to the letter that corresponds to them in the angle list (by order) ex: a is Opposite of X. 
-                //Adjacent and Hypotenuse don't matter bc they play the same role.
+                // Adjacent and Hypotenuse don't matter bc they play the same role.
 
                 // TEST CASE: ENTER 60, 50, 20
                 Point triangleAngles = new Point();
                 float tmp;
 
                 // Finding X
-
+                tmp = (b * b + c * c - a * a) / (2 * b * c);
+                triangleAngles.x = (float)Math.Acos(tmp);
+                triangleAngles.x = RadToDeg(triangleAngles.x);
 
                 // Finding Z
                 tmp = Math.Abs(((c * c) - ((a * a) + (b * b))) / -(2 * a * b));
@@ -224,10 +214,14 @@ namespace MathForGamesExercises
                 triangleAngles.z = (float)Math.Acos(tmp);
                 triangleAngles.z =  RadToDeg(triangleAngles.z);
                 //Console.WriteLine($"TEST CASE: {triangleAngles.z} SHOULD be around 18.2");
-                // POGCHAMP
                 // also theres a way to make this a lot shorter- having to do with taking the sqrt of the two adjacent sides and... something after that
 
                 // Finding Y
+                triangleAngles.y = 180 - triangleAngles.x - triangleAngles.z;
+
+                Console.WriteLine($"Angle A is {triangleAngles.x}");
+                Console.WriteLine($"Angle B is {triangleAngles.y}");
+                Console.WriteLine($"Angle C is {triangleAngles.z}");
 
                 return triangleAngles;
             }
