@@ -1,5 +1,6 @@
 ﻿(Solved using the program itself).
 
+Magnitude and Normalization
 2.a: 1.732051
 2.b: 3.605551
 2.c: 1.732051
@@ -7,3 +8,15 @@
 
 3.a: 29.61841
 3.b: 10.72381
+
+
+Dot and Cross Product
+2.a: 0
+2.b: -2
+2.c: -1
+
+3.a: 1.712693
+3.b: 2.111216
+
+4.a: Right
+4.b: Yes(?)
