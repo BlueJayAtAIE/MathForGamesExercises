@@ -6,20 +6,11 @@ using System.Threading.Tasks;
 
 namespace VectorsTutorialAndExercises
 {
-    class Program
+    class Vectors
     {
-        class Vector2
+        struct Vector2
         {
             public float x, y;
-
-            /// <summary>
-            /// Creates an empty Vector2.
-            /// </summary>
-            public Vector2()
-            {
-                x = 0;
-                y = 0;
-            }
 
             /// <summary>
             /// Creates a new Vector 3 with the specified values.
@@ -102,7 +93,7 @@ namespace VectorsTutorialAndExercises
             /// <param name="compareTo">Other Vector2 to compare to for angle calculation.</param>
             public float AngleBetween(Vector2 compareTo)
             {
-                // Normalize both Vector3s
+                // Normalize both Vector2s
                 Vector2 a = GetNormalized();
                 Vector2 b = compareTo.GetNormalized();
 
@@ -164,19 +155,9 @@ namespace VectorsTutorialAndExercises
             }
         }
 
-        class Vector3
+        struct Vector3
         {
             public float x, y, z;
-
-            /// <summary>
-            /// Creates an empty Vector3.
-            /// </summary>
-            public Vector3()
-            {
-                x = 0;
-                y = 0;
-                z = 0;
-            }
 
             /// <summary>
             /// Creates a new Vector3 with the specified values.

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A6BDB1D-0E39-4656-983E-CCE50CD90DAE}</ProjectGuid>
+    <ProjectGuid>{4FE89CCB-8C87-4FA1-88B8-75BF91F21FDE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MathForGamesExercises</RootNamespace>
-    <AssemblyName>MathForGamesExercises</AssemblyName>
+    <RootNamespace>MatrixTutorialAndExercises</RootNamespace>
+    <AssemblyName>MatrixTutorialAndExercises</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MathAndTrig.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VectorsLite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

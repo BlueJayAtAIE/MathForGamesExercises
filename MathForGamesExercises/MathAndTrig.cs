@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathForGamesExercises
 {
-    class Program
+    class MathAndTrig
     {
         struct Point
         {

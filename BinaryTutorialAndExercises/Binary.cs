@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinaryTutorialAndExercises
 {
-    class Program
+    class Binary
     {
         const byte CHAINSAW = 0x01;
         const byte PISTOL = 0x01 << 1;
