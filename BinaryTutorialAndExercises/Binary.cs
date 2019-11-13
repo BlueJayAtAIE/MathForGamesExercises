@@ -44,6 +44,7 @@ namespace BinaryTutorialAndExercises
             Console.WriteLine(IsLeftMostBitSet(10101100)); //True
             Console.WriteLine(IsLeftMostBitSet(00000010)); //False
             Console.WriteLine(IsRightMostBitSet(01101001)); //True
+            Console.WriteLine(IsRightMostBitSet(01101010)); //False
             Console.WriteLine(IsRightMostBitSet(10110100)); //False
 
             Console.WriteLine();
@@ -56,7 +57,7 @@ namespace BinaryTutorialAndExercises
             Console.WriteLine(IsBitSet(11111010, 0)); //False
             Console.WriteLine(IsBitSet(00100010, 1)); //True
             Console.WriteLine(IsBitSet(1101011011, 6)); //True
-            Console.WriteLine(IsBitSet(0000000000, 6)); //Self Destruct
+            Console.WriteLine(IsBitSet(0000000000, 6)); //Self Destruct / False
 
             Console.ReadKey();
         }
@@ -89,25 +90,37 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static bool IsLeftMostBitSet(uint value)
         {
-            string temp = value.ToString();
-            string final = temp;
-
-            // This if and while loop will add the 0s back on 
-            // that are lost when converting to a string.
-            if (temp.Length < 8)
-            {
-                while (final.Length < 8)
-                {
-                    final = temp.Insert(0, "0");
-                    temp = final;
-                }
-            }
-
-            if (final.First() == '1')
+            byte shifted = (byte)(value >> 8);
+            if (shifted != 0)
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+
+            #region Archived
+            //string temp = value.ToString();
+            //string final = temp;
+
+            // This if and while loop will add the 0s back on 
+            // that are lost when converting to a string.
+            //if (temp.Length < 8)
+            //{
+            //    while (final.Length < 8)
+            //    {
+            //        final = temp.Insert(0, "0");
+            //        temp = final;
+            //    }
+            //}
+
+            //if (final.First() == '1')
+            //{
+            //    return true;
+            //}
+            //return false;
+            #endregion
         }
 
         /// <summary>
@@ -117,12 +130,24 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static bool IsRightMostBitSet(uint value)
         {
-            string temp = Convert.ToString(value);
-            if (temp.Last() == '1')
+            byte shifted = (byte)(value << 7);
+            if (shifted != 0)
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+
+            #region Archived
+            //string temp = Convert.ToString(value);
+            //if (temp.Last() == '1')
+            //{
+            //    return true;
+            //}
+            //return false;
+            #endregion
         }
 
         /// <summary>
@@ -134,13 +159,24 @@ namespace BinaryTutorialAndExercises
         /// <param name="bitToCheck">Number in the sequnce to check.</param>
         public static bool IsBitSet(uint value, int bitToCheck)
         {
+            int mask = 0x01 << bitToCheck;
+            if ((value & mask) == mask)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+            #region Archived
             string temp = Convert.ToString(value);
             int count = Math.Abs(bitToCheck - temp.Length);
             try
             {
                 if (temp[count - 1] == '1')
                 {
-                    return true;
+                    
                 }
             }
             catch
@@ -149,6 +185,7 @@ namespace BinaryTutorialAndExercises
             }
             
             return false;
+            #endregion
         }
 
         /// <summary>
@@ -158,17 +195,28 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static int GetRightMostBitSet(uint value)
         {
-            string temp = Convert.ToString(value);
-            int count = 1;
-
-            for (int i = temp.Length; i > 0; i--)
+            for (int i = 1; i <= 8; i++)
             {
-                if (temp[i- 1] == '1')
+                int mask = 0x01 << i - 1;
+                if ((value & mask) == mask)
                 {
-                    return count;
+                    return i;
                 }
-                count++;
             }
+
+            #region Archived
+            //string temp = Convert.ToString(value);
+            //int count = 1;
+
+            //for (int i = temp.Length; i > 0; i--)
+            //{
+            //    if (temp[i- 1] == '1')
+            //    {
+            //        return count;
+            //    }
+            //    count++;
+            //}
+            #endregion
 
             // If theres no ones.
             return -1;
