@@ -42,6 +42,7 @@ namespace BinaryTutorialAndExercises
 
             Console.WriteLine();
             Console.WriteLine(IsLeftMostBitSet(10101100)); //True
+            Console.WriteLine(IsLeftMostBitSet(00101100)); //False
             Console.WriteLine(IsLeftMostBitSet(00000010)); //False
             Console.WriteLine(IsRightMostBitSet(01101001)); //True
             Console.WriteLine(IsRightMostBitSet(01101010)); //False
@@ -90,8 +91,8 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static bool IsLeftMostBitSet(uint value)
         {
-            byte shifted = (byte)(value >> 8);
-            if (shifted != 0)
+            int mask = 0x01 << 8;
+            if ((value & mask) == mask)
             {
                 return true;
             }
@@ -130,8 +131,10 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static bool IsRightMostBitSet(uint value)
         {
-            byte shifted = (byte)(value << 7);
-            if (shifted != 0)
+            //byte shifted = (byte)(value << 7);
+            //if (shifted != 0)
+            int mask = 0x01;
+            if ((value & mask) == mask)
             {
                 return true;
             }
