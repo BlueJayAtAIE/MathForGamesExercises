@@ -38,27 +38,34 @@ namespace BinaryTutorialAndExercises
             //AddToInventory(ref inventory, PLASMA_GUN);
             //AddToInventory(ref inventory, BFG9000);
 
+            Console.WriteLine("Print binary >");
             PrintBinary(inventory);
 
             Console.WriteLine();
-            Console.WriteLine(IsLeftMostBitSet(10101100)); //True
-            Console.WriteLine(IsLeftMostBitSet(00101100)); //False
-            Console.WriteLine(IsLeftMostBitSet(00000010)); //False
-            Console.WriteLine(IsRightMostBitSet(01101001)); //True
-            Console.WriteLine(IsRightMostBitSet(01101010)); //False
-            Console.WriteLine(IsRightMostBitSet(10110100)); //False
+            Console.WriteLine("Left most bit set >");
+            Console.WriteLine($"10101100 - {IsLeftMostBitSet(10101100)}"); //True
+            Console.WriteLine($"00101100 - {IsLeftMostBitSet(00101100)}"); //False
+            Console.WriteLine($"00000010 - {IsLeftMostBitSet(00000010)}"); //False
 
             Console.WriteLine();
-            Console.WriteLine(GetRightMostBitSet(10101000)); //4
-            Console.WriteLine(GetRightMostBitSet(00100000)); //6
-            Console.WriteLine(GetRightMostBitSet(10000000)); //8
-            Console.WriteLine(GetRightMostBitSet(00000000)); //-1
+            Console.WriteLine("Right most bit set >");
+            Console.WriteLine($"01101001 - {IsRightMostBitSet(01101001)}"); //True
+            Console.WriteLine($"01101010 - {IsRightMostBitSet(01101010)}"); //False
+            Console.WriteLine($"10110100 - {IsRightMostBitSet(10110100)}"); //False
 
             Console.WriteLine();
-            Console.WriteLine(IsBitSet(11111010, 0)); //False
-            Console.WriteLine(IsBitSet(00100010, 1)); //True
-            Console.WriteLine(IsBitSet(1101011011, 6)); //True
-            Console.WriteLine(IsBitSet(0000000000, 6)); //Self Destruct / False
+            Console.WriteLine("Get right most bit set >");
+            Console.WriteLine($"10101000 - {GetRightMostBitSet(10101000)}"); //4
+            Console.WriteLine($"00100000 - {GetRightMostBitSet(00100000)}"); //6
+            Console.WriteLine($"10000000 - {GetRightMostBitSet(10000000)}"); //8
+            Console.WriteLine($"00000000 - {GetRightMostBitSet(00000000)}"); //-1
+
+            Console.WriteLine();
+            Console.WriteLine("Is bit set >");
+            Console.WriteLine($"11111010, 0 - {IsBitSet(11111010, 0)}"); //False
+            Console.WriteLine($"00100010, 1 - {IsBitSet(00100010, 1)}"); //True
+            Console.WriteLine($"1101011011, 6 - {IsBitSet(1101011011, 6)}"); //True
+            Console.WriteLine($"0000000000, 6 - {IsBitSet(0000000000, 6)}"); //Self Destruct / False
 
             Console.ReadKey();
         }
