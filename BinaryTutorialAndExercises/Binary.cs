@@ -138,6 +138,8 @@ namespace BinaryTutorialAndExercises
         /// <param name="value">Binary sequence to check.</param>
         public static bool IsRightMostBitSet(uint value)
         {
+            // This is the old method of how this worked before I decided to use masks everywhere.
+            // I think it also fails sometimes, but it's here for archival's sake.
             //byte shifted = (byte)(value << 7);
             //if (shifted != 0)
             int mask = 0x01;
